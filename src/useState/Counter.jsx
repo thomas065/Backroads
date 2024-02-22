@@ -5,6 +5,7 @@ const Counter = () => {
 
     const plusOne = () => {
         setCounter(counter + 1);
+        console.log(counter);
     };
 
     const minusOne = () => {
