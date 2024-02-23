@@ -38,22 +38,19 @@ function MultipleValues() {
     if (isError) {
         return <h2>Error loading Github User....</h2>;
     }
+    const { avatar_url, name, bio, blog } = user;
     return (
         <div className='card h-100' style={{ width: '18rem' }}>
-            <img
-                src={user.avatar_url}
-                className='card-img-top'
-                alt={user.name}
-            />
+            <img src={avatar_url} className='card-img-top' alt={name} />
             <div className='card-body'>
-                <h5 className='card-title'>{user.name}</h5>
-                <p className='card-text'>{user.bio}</p>
+                <h5 className='card-title'>{name}</h5>
+                <p className='card-text'>{bio}</p>
             </div>
             <ul className='list-group list-group-flush'>
                 <li className='list-group-item'>Portfolio</li>
                 <li className='list-group-item'>
-                    <a target='_blank' href={user.blog}>
-                        {user.blog}
+                    <a target='_blank' href={blog}>
+                        {blog}
                     </a>
                 </li>
             </ul>
